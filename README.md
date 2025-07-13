@@ -1,4 +1,5 @@
 # manymine
+
 A simple way to run multiple Minecraft Bedrock servers in docker containers on the same host, and be able to discover them as LAN games.
 
 Run your Minecraft Bedrock servers on non-default ports (e.g. 60601, 60602...)
@@ -10,6 +11,7 @@ Both manymine and your minecraft servers need to be on the same docker network.
 ## Environment variables
 
 - `MM_DISCOVERY_INTERVAL`
+
   - How often to look for new docker containers running a Bedrock Server (in milliseconds).
   - Defaults to `0` (discovery is only run once on startup)
   - If you'd like to periodically scan for new servers, set this to something like `5000`
@@ -20,7 +22,9 @@ Both manymine and your minecraft servers need to be on the same docker network.
   - Not much reason to change this as the clients will be pinging at this rate.
 
 ## Docker Compose
+
 Using docker compose, you'll want something like this:
+
 ```
 version: "3.7"
 services:
