@@ -25,14 +25,14 @@ Both manymine and your minecraft servers need to be on the same docker network.
 
 Using docker compose, you'll want something like this:
 
-```
+```yaml
 version: "3.7"
 services:
   manymine:
-    image: illiteratealliterator/manymine
+    image: eripa/manymine:latest
     container_name: manymine
     ports:
-      - '19132:19132/udp'
+      - "19132:19132/udp"
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock
 
@@ -46,7 +46,7 @@ services:
     volumes:
       - minecraft-a-data:/data
     ports:
-      - '60601:60601/udp'
+      - "60601:60601/udp"
     labels:
       - manymine.enable=true
 
@@ -60,7 +60,7 @@ services:
     volumes:
       - minecraft-b-data:/data
     ports:
-      - '60602:60602/udp'
+      - "60602:60602/udp"
     labels:
       - manymine.enable=true
 
